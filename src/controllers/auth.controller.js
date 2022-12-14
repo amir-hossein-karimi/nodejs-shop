@@ -30,15 +30,18 @@ class AuthController {
   login = async (req, res, next) => {
     try {
       const { username, password } = req.body;
-      const user = await user.findOneUser({ username });
+      const existUser = await user.findOneUser({ username });
 
-      if (!user.success || !compareStringWithHash(password, user.password))
+      if (
+        !existUser.success ||
+        !compareStringWithHash(password, existUser.password)
+      )
         throw { status: 400, message: "username or password is wrong" };
 
       const token = createJWT({ username });
 
       res.status(200).send({
-        id: user._id,
+        id: existUser._id,
         token,
         success: true,
         status: 200,

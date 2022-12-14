@@ -53,7 +53,7 @@ class Config {
               },
             ],
           },
-          apis: [`${__dirname}/routes/*.js`],
+          apis: [`${__dirname}/routes/*/*.js`],
         })
       )
     );

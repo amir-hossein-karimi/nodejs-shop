@@ -1,20 +1,20 @@
 const Router = require("express").Router();
-const { AuthController } = require("../controllers/auth.controller");
-const { errorParser } = require("../middlewares/errorParser");
-const { authValidator } = require("../validations/auth.validator");
+const { AuthController } = require("../../controllers/auth.controller");
+const { errorParser } = require("../../middlewares/errorParser");
+const { authValidator } = require("../../validations/auth.validator");
 
 /**
  * @swagger
  * tags:
- *  name: auth
+ *  name: userAuth
  */
 
 /**
  * @swagger
- * /auth/register:
+ * /user/auth/register:
  *  post:
  *    summary: this is register , enter your username and a password to create your profile
- *    tags: [auth]
+ *    tags: [userAuth]
  *    parameters:
  *    - name: username
  *      required: true
@@ -43,10 +43,10 @@ Router.post(
 
 /**
  * @swagger
- * /auth/login:
+ * /user/auth/login:
  *  post:
  *    summary: this is login api please enter your username and password
- *    tags: [auth]
+ *    tags: [userAuth]
  *    parameters:
  *    - name: username
  *      required: true
