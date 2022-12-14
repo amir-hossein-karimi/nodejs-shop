@@ -1,5 +1,5 @@
-const { hashString } = require("../utils/bcrypt");
-const { userModel } = require("../models/users");
+const { hashString } = require("../../utils/bcrypt");
+const { userModel } = require("../../models/users");
 
 class User {
   addUser = async ({ username, password }) => {
