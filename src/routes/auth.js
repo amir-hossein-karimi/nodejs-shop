@@ -9,6 +9,31 @@ const { authValidator } = require("../validations/auth.validator");
  *  name: auth
  */
 
+/**
+ * @swagger
+ * /auth/register:
+ *  post:
+ *    summary: this is register , enter your username and a password to create your profile
+ *    tags: [auth]
+ *    parameters:
+ *    - name: username
+ *      required: true
+ *      in: formData
+ *      type: string
+ *      description: enter your username
+ *    - name: password
+ *      required: true
+ *      in: formData
+ *      type: string
+ *      description: enter your password
+ *    responses:
+ *      201:
+ *        description: create user
+ *      400:
+ *        description: bad request
+ *      500:
+ *        description: internal error
+ */
 Router.post(
   "/register",
   authValidator.register(),
@@ -36,8 +61,8 @@ Router.post(
  *    responses:
  *      200:
  *        description: successfull login
- *      404:
- *        description: fail login
+ *      400:
+ *        description: bad request
  *      500:
  *        description: internal error
  */
