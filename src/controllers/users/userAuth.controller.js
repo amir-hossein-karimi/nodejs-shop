@@ -1,4 +1,4 @@
-const { user } = require("../admin/users.controller");
+const { user } = require("../common/users.controller");
 const { compareStringWithHash } = require("../../utils/bcrypt");
 const { createJWT } = require("../../utils/jwt");
 
