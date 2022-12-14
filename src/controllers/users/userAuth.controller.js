@@ -1,6 +1,6 @@
-const { user } = require("../controllers/users.controller");
-const { compareStringWithHash } = require("../utils/bcrypt");
-const { createJWT } = require("../utils/jwt");
+const { user } = require("../common/users.controller");
+const { compareStringWithHash } = require("../../utils/bcrypt");
+const { createJWT } = require("../../utils/jwt");
 
 class AuthController {
   register = async (req, res, next) => {
